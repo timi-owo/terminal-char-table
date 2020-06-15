@@ -1,8 +1,13 @@
 # terminal-char-table
-a simple javascript (node.js) library for drawing ascii tables in the terminal and console, unicode supported.
+a simple javascript (node.js) library for drawing ascii tables in the terminal and console.
 
 ![screenshot](screenshot.png)
 
+**WARNING:**<br>
+Since version above 1.1.0, `'CharTable'` object was not as a child of the `'terminal'` namespace,<br>
+So you can create a `'CharTable'` object instance directly after `'require()'` has returned,<br>
+In addition, `'terminal.wcswidth'` and `'terminal.wcwidth'` has been also removed.
+> If you are the first time use this library, can be ignore this warning.
 # Install & Usage
 - Install package from npm.
 ```
@@ -10,14 +15,14 @@ npm install terminal-char-table
 ```
 - Import package in your code.
 ```js
-const terminal = require('terminal-char-table');
+const CharTable = require('terminal-char-table');
 ```
 - Create instance of `CharTable` object.
 > You can pass an optional integer to the constructor.
 >
 > The size of the value controls how many compact of the table cells.
 ```js
-let table = new terminal.CharTable(5);
+let table = new CharTable(5);
 ```
 - Fill your table content.
 > method `insert()` and `append()` can insert a new row at the top or bottom of the table.
@@ -37,7 +42,7 @@ table.from([
 	['3', 'xxx', 'xxx']
 ]);
 ```
-- Output your table in terminal.
+- Output your table.
 > method `string()` has two optional arguments:
 >
 >`left_indentation (int)` and `first_line_break (bool)`

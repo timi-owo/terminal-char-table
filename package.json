@@ -1,7 +1,7 @@
 {
   "name": "terminal-char-table",
-  "version": "1.0.0",
-  "description": "a simple javascript (node.js) library for drawing ascii tables in the terminal and console, unicode supported.",
+  "version": "1.1.0",
+  "description": "a simple javascript (node.js) library for drawing ascii tables in the terminal and console.",
   "main": "module.js",
   "scripts": {
     "test": "node ./test.js"

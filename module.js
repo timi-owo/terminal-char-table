@@ -1,7 +1,9 @@
 // Original Author: https://github.com/hustcc/word-table
 // Github: https://github.com/timi-owo/terminal-char-table
 
-const util = require('./impl-char-width');
+'use strict';
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------
 
 class CharTable
 {
@@ -83,7 +85,7 @@ class CharTable
 
 		for (let i = 0; i < length; i++)
 		{
-			let charlen = util.wcswidth(fields[i]);
+			let charlen = this._measureStrLen(fields[i]);
 
 			if (this.m_colMaxLen.length > i)
 			{
@@ -99,6 +101,18 @@ class CharTable
 			columns.push(obj);
 		}
 		return columns;
+	}
+
+	_measureStrLen(str)
+	{
+		let len = 0;
+		for (let i = 0; i < str.length; i++)
+		{
+			let code = str.charCodeAt(i);
+			if (code >= 0 && code <= 128)
+			{ len += 1; } else { len += 2; }
+		}
+		return len;
 	}
 
 	/*
@@ -175,6 +189,8 @@ class CharTable
 	}
 }
 
-module.exports.CharTable = CharTable;
-module.exports.wcswidth = util.wcswidth;
-module.exports.wcwidth = util.wcwidth;
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+
+module.exports = CharTable;
+
+//...
