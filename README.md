@@ -1,9 +1,11 @@
-# terminal-char-table
+# 📦 **terminal-char-table**
 📌a simple javascript (node.js) library for drawing ascii tables in the terminal and console.
 
 ![screenshot](screenshot.png)
 
 ### ⚠️Version belows 2.0.0 is deprecated and not recommend to use.
+
+<br>
 
 ## Install
 
@@ -13,8 +15,9 @@ $ npm install terminal-char-table
 
 ## Example
 
-- Create a simple table with default options.
+- Create a simple char table with default options.
 ```js
+const CharTable = require('terminal-char-table');
 let table = new CharTable();
 
 // fill the table row by rows
@@ -32,31 +35,31 @@ console.log(table.string(1));
 
 ## API
 
-### CharTable([option])
+### **CharTable([option])**
 
-Constructor function of `CharTable` class, An object with optional property can be passed in:
-- `column_align` : a string to specify default columns alignment, value can be a `left` or `right` or `center`. default `left`.
-- `column_fill_length` : an integer to specify how many spaces fill into each columns, bigger value will make the table looks more wider. default `2`.
-  - if your align is `left` or `right`, set this value to `2` or higher is recommended.
-- `column_empty_drawn` : a boolean that specifies whether empty columns are drawn. default `true`.
+*Constructor function of `CharTable` class, An object with optional propertys can be passed in:*
+- @string `column_align` : default alignment of columns, value can be a `left` or `right` or `center`. default `left`.
+- @number `column_fill_length` : an integer to specify how many spaces fill into each columns. default `2`.
+  - bigger value will make the table looks more wider, if alignment is `left` or `right`, set this value to `2` or higher is recommended.
+- @boolean `column_empty_drawn` : specify whether empty columns are drawn. default `true`.
 
-### insert(columns[, align])
+### **insert(columns[, align])**
 
-Add a new row at the top of the table.
-- param `columns` : an array of string to build columns of this row left side to right.
-- param `align` : a optional string to specify columns alignment of `this row`.
+*Add a new row at the top of the table.*
+- @string[] `columns` : an array of string to build columns of this row left side to right.
+- @string `align` : columns alignment of this row, value can be a `left` or `right` or `center`.
 
-### append(columns[, align])
+### **append(columns[, align])**
 
-Add a new row at the bottom of the table.
-- param `columns` : an array of string to build columns of this row left side to right.
-- param `align` : a optional string to specify columns alignment of `this row`.
+*Add a new row at the bottom of the table.*
+- @string[] `columns` : an array of string to build columns of this row left side to right.
+- @string `align` : columns alignment of this row, value can be a `left` or `right` or `center`.
 
-### from(rows[, align])
+### **from(rows[, align])**
 
-Set the table rows from given data.
-- param `rows` : an array include rows to append, each cell is an array of string indicated columns of that row.
-- param `align` : a optional string to specify columns alignment of `all rows`.
+*Set the table rows from given data.*
+- @string[] `rows` : an array include rows to append, each cell is columns of that row.
+- @string `align` : columns alignment of each rows, value can be a `left` or `right` or `center`.
 
 ```js
 // table header
@@ -69,12 +72,12 @@ table.from([['1', '-----', 'center'], ['2', '-----', 'center'], ['3', '-----', '
 table.from([['4', '-----', 'default'], ['5', '-----', 'default'], ['6', '-----', 'default']]);
 ```
 
-### from2(row_objects)
+### **from2(row_objects)**
 
-Set the table rows from given data.
-- param `row_objects` : an array of object include rows to append, each object indicated a single row:
-  - property `columns` : an array of string to build columns of this row left side to right.
-  - property `align` : a optional string to specify columns alignment of `this row`.
+*Set the table rows from given data.*
+- @object[] `row_objects` : an array of object that include rows to append, each object indicated a single row:
+  - @string[] `columns` : an array of string to build columns of that row left side to right.
+  - @string? `align` : columns alignment of that row, value can be a `left` or `right` or `center`.
 
 ```js
 table.from2([
@@ -96,19 +99,19 @@ table.from2([
 ]);
 ```
 
-### lines()
+### **lines()**
 
-Get printable string lines. an array of string will be returned.
+*Get printable string lines. an array of string will be returned.*
 
-### string([left_indentation, first_line_break])
+### **string([left_indentation, first_line_break])**
 
-Get printable string. wrapped from `lines()` method.
-- param `left_indentation` : an optional integer to specify how many spaces fill before each string lines.
-- param `first_line_break` : a optional boolean that specifies whether to break the first line.
+*Get printable string. wrapped from `lines()` method.*
+- @number `left_indentation` : an integer to specify how many spaces filling before each string lines. default `0`.
+- @boolean `first_line_break` : specify whether add a line break before the first line. default `false`.
 
-### clear()
+### **clear()**
 
-Delete all rows in the table.
+*Delete all rows in the table.*
 
 ## Note
 
