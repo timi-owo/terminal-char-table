@@ -23,7 +23,7 @@ function demo1()
 
 function demo2()
 {
-	console.log('\n> Demo2: Only draw columns if it\'s not empty.');
+	console.log('\n> Demo2: Only drawing the columns if it\'s not empty.');
 
 	let table = new CharTable({ column_empty_drawn: false });
 
