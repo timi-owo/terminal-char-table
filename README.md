@@ -1,5 +1,5 @@
 # 📦 **terminal-char-table**
-📌a simple javascript (node.js) library for drawing ascii tables in the terminal and console.
+*📌 a simple javascript (node.js) library for drawing ascii tables in the terminal and console.*
 
 ![screenshot](screenshot.png)
 
@@ -116,5 +116,5 @@ table.from2([
 ## Note
 
 - The complete methods and description can be found in `module.js`
-- More example see `demo.js` and run demo using `npm test` command.
+- More example see `test.js` and run test using `npm test` command.
 
