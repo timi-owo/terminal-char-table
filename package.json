@@ -1,16 +1,16 @@
 {
   "name": "terminal-char-table",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "a simple javascript (node.js) library for drawing ascii tables in the terminal and console.",
   "main": "module.js",
   "scripts": {
-    "test": "node ./demo.js"
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": ">=6.4.0"
   },
   "license": "MIT",
-  "author": {
-    "name": "timi",
-    "email": "781662377@qq.com"
-  },
+  "author": "T!Mi (https://github.com/timi-owo)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/timi-owo/terminal-char-table.git"
@@ -26,7 +26,6 @@
     "console",
     "char",
     "ascii",
-    "unicode",
     "draw",
     "drawing"
   ]
